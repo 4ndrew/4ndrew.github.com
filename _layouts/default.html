@@ -68,25 +68,11 @@
 <div id="wrapper">
 
 	<div id="header">
-		<h1>This a test</h1>
+		<h1>{{ page.title }}</h1>
 	</div><!-- #header-->
 
 	<div id="middle">
-                    <div id="container">
-            <div id="content">
-		Just a test page.
-
-            </div><!-- #content-->
-        </div><!-- #container-->
-
-        <div class="sidebar" id="sideLeft">
-		<h2>Posts</h2>
-            <ul class="posts">
-                
-                  <li><span>18 Jan 2011</span> &raquo; <a href="/2011/01/18/test/">This a test</a></li>
-                
-            </ul>
-        </div><!-- .sidebar#sideLeft -->
+            {{ content }}
 	</div><!-- #middle-->
 
 </div><!-- #wrapper -->

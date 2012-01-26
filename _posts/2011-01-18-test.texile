@@ -1,6 +1,7 @@
 ---
 title: This a test
 categories: ['en']
+layout: entry
 ---
 
 Just a test page.

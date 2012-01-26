@@ -1,13 +1,34 @@
 ---
-layout: default
-title: Andrew Porokhin
+layout: entry
+title: Andrew Porokhin, main
 ---
 
-<div id="main">
-  <h1>Blog</h1>
-  <ul class="posts">
-    {% for post in site.categories.en %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<p>Hi, I'm Andrew Porokhin. Do not take it so hard,
+I'm just experimenting with GitHub Pages and DIV HTML coding, so my site sometimes looks like a peace of ..., it's normal ;)</p>
+
+<p>My site will be ready at: <span id="readydate"></span>, feel free to visit it again, I'll wait for you...</p>
+<script type="text/javascript">
+// <!-- 
+	window.onload = function() {
+		var readydate = document.getElementById("readydate");
+		var currDate = new Date();
+		var newDate = new Date();
+		if ((storedDateCookie = $.cookie('openDate'))) {
+			var arr = storedDateCookie.split('/');
+			if (arr.length > 1) {
+				newDate = new Date(arr[0], arr[1], arr[2]);
+			}
+		}
+		if (newDate.getTime() - currDate.getTime() < 43200000) {
+			newDate = new Date(
+				currDate.getTime()
+					+ ((Math.floor(Math.random() * 11) + 5)*86400000));
+			$.cookie("openDate", newDate.getFullYear() + '/' + newDate.getMonth() + '/' + newDate.getDate());
+		}
+        
+		var monthNames = [ "January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December" ];
+		readydate.innerHTML = newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear();
+	}
+// -->
+</script>
